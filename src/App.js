@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+// import StarRating from './components/StarRating';
+// import Slider from './components/Slider/Slider';
+// import CounterReducer from './components/Counter-UseReduce/CountReducer';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <div style={{width: '100%'}}> <Slider/></div> */}
+      {/* <div style={{width: '100%'}}>
+         {
+        stars.map((star, i) => (
+          <StarRating key={star} 
+          rating={hover || rating} 
+          id={star} 
+          onClick={() => setRating(star)} 
+          onMouseEnter = {() => setHover(star)} 
+          onMouseLeave={() => setHover(0)}
+          />
+        ))
+      }
+      </div> */}
+
+      {/* <CounterReducer/> */}
+     
     </div>
   );
 }
