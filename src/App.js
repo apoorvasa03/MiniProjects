@@ -3,6 +3,7 @@ import './App.css';
 // import StarRating from './components/StarRating';
 // import Slider from './components/Slider/Slider';
 // import CounterReducer from './components/Counter-UseReduce/CountReducer';
+import Calculator from './components/calculator/Calculator';
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
       </div> */}
 
       {/* <CounterReducer/> */}
+
+      <Calculator/>
      
     </div>
   );
