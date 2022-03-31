@@ -3,8 +3,9 @@ import './App.css';
 // import StarRating from './components/StarRating';
 // import Slider from './components/Slider/Slider';
 // import CounterReducer from './components/Counter-UseReduce/CountReducer';
-import Calculator from './components/calculator/Calculator';
+// import Calculator from './components/calculator/Calculator';
 
+import AutoComplete from './components/auto-complete/AutoComplete';
 function App() {
 
   return (
@@ -26,7 +27,9 @@ function App() {
 
       {/* <CounterReducer/> */}
 
-      <Calculator/>
+      {/* <Calculator/> */}
+
+      <AutoComplete/>
      
     </div>
   );
