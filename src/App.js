@@ -4,8 +4,9 @@ import './App.css';
 // import Slider from './components/Slider/Slider';
 // import CounterReducer from './components/Counter-UseReduce/CountReducer';
 // import Calculator from './components/calculator/Calculator';
+// import AutoComplete from './components/auto-complete/AutoComplete';
+// import Clock from './components/analog-clock/Clock';
 
-import AutoComplete from './components/auto-complete/AutoComplete';
 function App() {
 
   return (
@@ -29,7 +30,9 @@ function App() {
 
       {/* <Calculator/> */}
 
-      <AutoComplete/>
+      {/* <AutoComplete/> */}
+
+      {/* <Clock/> */}
      
     </div>
   );

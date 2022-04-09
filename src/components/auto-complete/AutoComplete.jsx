@@ -2,6 +2,8 @@ import axios from 'axios'
 import {useState, useEffect, useCallback} from 'react'
 import debounce from "lodash.debounce";
 import './autocomplete.css'
+
+
 const AutoComplete = () => {
     let [users, setUsers] = useState([])
     let [text, setText] = useState('')
@@ -18,16 +20,25 @@ const AutoComplete = () => {
     
 
     const onChangeHandler = (text) => {
-        let matchs = []
+        let matches = []
         if(text.length){
-            matchs = users.filter(user => {
+            matches = users.filter(user => {
                 let regEx = new RegExp(`${text}`, 'gi')
                 return user.email.match(regEx)
             })
-            setSuggestions(matchs)
         }
-        setText(text)
+        setSuggestions(matches)
     }
+
+    const debouncedSave = useCallback(
+		debounce((newValue) => onChangeHandler(newValue), 1000),
+		[]
+	);
+
+    const handleChange = (newValue) => {
+		setText(newValue);
+		debouncedSave(newValue);
+	};
 
     const onSuggestionHandler = (text) => {
         setText(text)
@@ -37,12 +48,12 @@ const AutoComplete = () => {
     return (
         <div>
             <input type='text' value={text} className='col-md-12 input' style={{marginTop: 10}} 
-            onChange={e => onChangeHandler(e.target.value)}
+            onChange={e => handleChange(e.target.value)}
             onBlur={() => 
             setTimeout(() => 
             { 
                 setSuggestions([])
-            }, 100)} />
+            }, 200)} />
             {suggestions && suggestions.map((suggestion) => 
                     <div key={suggestion.id} onClick={e => onSuggestionHandler(suggestion.email)} className='col-md-12 suggestion justify-content-md-center'>{suggestion.email}</div>
             )}
@@ -51,3 +62,16 @@ const AutoComplete = () => {
 }
 
 export default AutoComplete
+
+/**
+ * .suggestion{
+    cursor: pointer;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.suggestion:hover{
+    background-color: grey;
+}
+ */
