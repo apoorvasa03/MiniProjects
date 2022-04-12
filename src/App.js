@@ -1,12 +1,14 @@
 
 import './App.css';
+import Accordion from './components/accordion/Accordion';
 // import StarRating from './components/StarRating';
 // import Slider from './components/Slider/Slider';
 // import CounterReducer from './components/Counter-UseReduce/CountReducer';
 // import Calculator from './components/calculator/Calculator';
 // import AutoComplete from './components/auto-complete/AutoComplete';
 // import Clock from './components/analog-clock/Clock';
-
+ import Todo from './components/todo/Todo';
+import TodoList from './components/todo/TodoList';
 function App() {
 
   return (
@@ -33,6 +35,10 @@ function App() {
       {/* <AutoComplete/> */}
 
       {/* <Clock/> */}
+
+      {/* <Accordion/> */}
+
+      <TodoList/>
      
     </div>
   );
