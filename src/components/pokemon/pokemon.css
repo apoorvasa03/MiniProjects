@@ -1,0 +1,38 @@
+.pokemon-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto 0px;
+}
+
+
+.pokemon-wrapper{
+    margin-top: 0;
+    width: 30%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.pokemon-selector{
+
+    width: 90%
+}
+
+.pokemon-buttons{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.poke-card{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

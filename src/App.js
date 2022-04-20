@@ -1,44 +1,44 @@
 
 import './App.css';
-import Accordion from './components/accordion/Accordion';
-// import StarRating from './components/StarRating';
-// import Slider from './components/Slider/Slider';
-// import CounterReducer from './components/Counter-UseReduce/CountReducer';
-// import Calculator from './components/calculator/Calculator';
-// import AutoComplete from './components/auto-complete/AutoComplete';
-// import Clock from './components/analog-clock/Clock';
- import Todo from './components/todo/Todo';
-import TodoList from './components/todo/TodoList';
-function App() {
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Blog from './components/my-blog/Blog';
+import Pokemon from './components/pokemon/Pokemon';
 
+function App(){
+  return (
+    <div className='App'>
+        <Router>
+          <Routes>
+              <Route path='/' element= {<Home/>}/>
+              <Route path='/blog' element= {<Blog/>}/>
+              <Route path='/pokemon' element= {<Pokemon/>}/>
+          </Routes>
+        </Router>
+    </div>
+  )
+}
+
+function Home() {
   return (
     <div className="App">
-      {/* <div style={{width: '100%'}}> <Slider/></div> */}
-      {/* <div style={{width: '100%'}}>
-         {
-        stars.map((star, i) => (
-          <StarRating key={star} 
-          rating={hover || rating} 
-          id={star} 
-          onClick={() => setRating(star)} 
-          onMouseEnter = {() => setHover(star)} 
-          onMouseLeave={() => setHover(0)}
-          />
-        ))
-      }
-      </div> */}
+        <h2> React Mini Projects</h2>
+        <div className='title-underline'></div>
+        <div className='components-container'>
+          <Link to='/blog'>
+            <div className='component'>
+              <div className='component-body'></div>
+              <footer className='component-footer'>My Blog</footer>
+            </div>
+          </Link>
 
-      {/* <CounterReducer/> */}
-
-      {/* <Calculator/> */}
-
-      {/* <AutoComplete/> */}
-
-      {/* <Clock/> */}
-
-      {/* <Accordion/> */}
-
-      <TodoList/>
+          <Link to='/pokemon'>
+            <div className='component'>
+              <div className='component-body'></div>
+              <footer className='component-footer'>Pokemon</footer>
+            </div>
+          </Link>
+        </div>
+        
      
     </div>
   );
